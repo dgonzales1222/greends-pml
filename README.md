@@ -25,10 +25,9 @@ Each description below includes the summary of the topics covered in the session
 We do an introduction to ML and compare it with *statistical modelling* using the simplest possible model, *linear regression*. We survey some of the problems that can be addressed with the techniques and tools that will be discussed during the semester. The examples will be run on Colab.
 
 - See (Raschka et al, 2022), Chapter 1: Giving Computers the Ability to Learn from Data
-- Types of machine learning problems: supervised learning, unsupervised learning, reinforcement learning. Suggestion: check video [Types of machine learning](https://www.youtube.com/watch?v=gh6mNF2BGvk)
+- Types of machine learning problems: supervised learning, unsupervised learning, reinforcement learning, self-supervised learning, semi-supervised learning [comparison table](https://www.altexsoft.com/static/content-image/2026/1/self-supervised-learning-vs-other-major-machine-le-6013e.webp) Suggestion: check video [Types of machine learning](https://www.youtube.com/watch?v=gh6mNF2BGvk)
 - Supervised learning: classification vs regression 
 - Examples of input data for machine learning problems: tabular data, images, text. See *Iris data set* example with the notebook [iris_regression_classification.ipynb](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/iris_regression_classification.ipynb)
-- [Example of inference for regression over the Iris data set](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/iris_LM_inference.ipynb)
 - Statistics vs Machine Learning: Check video: [When to use stats vs. ML?](https://www.youtube.com/watch?v=xUsm34qnE30)
 - The data set [Palmer Penguin](https://www.kaggle.com/datasets/parulpandey/palmer-archipelago-antarctica-penguin-data/data) has different type of variables and can be explored in different ways. Try to understand the data and establish and explore a meaningful regression problem using a statistical and a ML approach.
 <!--- An example of a prediction task for time series: check the notebook [modeling ground water levels](https://www.kaggle.com/code/andreshg/timeseries-analysis-a-complete-guide/) for the Kaggle competition [Acea Smart Water Analytics](https://www.kaggle.com/competitions/acea-water-prediction/). Try to download the data and run the notebook to reproduce the results. --->
