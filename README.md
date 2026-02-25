@@ -30,7 +30,15 @@ We do an introduction to ML and compare it with *statistical modelling* using th
 - Examples of input data for machine learning problems: tabular data, images, text.
 - See *Iris data set* regression example with the notebook [iris_regression.ipynb](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/iris_regression.ipynb). Identify the `.fit` and `.predict` methods, and explain what are their roles. Expand the code to perform some inference task, e.g. determine confidence bands for the responses, or determine confidence intervals for the regression coefficients.
 - Statistics modeling  vs Machine Learning: Check video: [When to use stats vs. ML?](https://www.youtube.com/watch?v=xUsm34qnE30)
-- The data set [Palmer Penguin](https://www.kaggle.com/datasets/parulpandey/palmer-archipelago-antarctica-penguin-data/data) has different type of variables and can be explored in different ways. Try to understand the data and establish and explore a meaningful regression problem using a statistical and a ML approach.
+- The data set [Palmer Penguin](https://www.kaggle.com/datasets/parulpandey/palmer-archipelago-antarctica-penguin-data/data) has different type of variables and can be explored in different ways. The available attributes are:
+    - species: penguin species (Chinstrap, Adélie, or Gentoo)
+    - culmen_length_mm: culmen length (mm)
+    - culmen_depth_mm: culmen depth (mm)
+    - flipper_length_mm: flipper length (mm)
+    - body_mass_g: body mass (g)
+    - island: island name (Dream, Torgersen, or Biscoe) in the Palmer Archipelago (Antarctica)
+    - sex: penguin sex <br>
+  Try to understand the data and establish and explore a meaningful regression problem using a statistical and a ML approach. For example, try to predict the body mass using as predictors the culmen length and depth and the flipper length (regression problem).
 <!--- An example of a prediction task for time series: check the notebook [modeling ground water levels](https://www.kaggle.com/code/andreshg/timeseries-analysis-a-complete-guide/) for the Kaggle competition [Acea Smart Water Analytics](https://www.kaggle.com/competitions/acea-water-prediction/). Try to download the data and run the notebook to reproduce the results. --->
 </details>
 
