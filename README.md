@@ -19,6 +19,8 @@ Links for class resources:
 # Sessions
 Each description below includes the summary of the topics covered in the session, as well as the description of assignments and links to videos or other materials that students should work through.
 
+---
+
 <details markdown="block">
 <summary><a name="T0"></a> 0. Introduction (Feb 20, 2026) </summary>
 
@@ -42,6 +44,7 @@ We do an introduction to ML and compare it with *statistical modelling* using th
 <!--- An example of a prediction task for time series: check the notebook [modeling ground water levels](https://www.kaggle.com/code/andreshg/timeseries-analysis-a-complete-guide/) for the Kaggle competition [Acea Smart Water Analytics](https://www.kaggle.com/competitions/acea-water-prediction/). Try to download the data and run the notebook to reproduce the results. --->
 </details>
 
+---
 
 <details id= markdown="block">
 <summary><a name="T1"></a> 1. Basic concepts (Feb 27, 2026): model, loss, fit, learning rate, iterations, epochs </summary>
@@ -56,6 +59,8 @@ The goal of the following classes is to understand how ML models can be trained 
 - [Exercise](docs/T1_linear_regression_exercise_with_pseudo_code.md): consider the pseudo-code for the previous exercise, and relate it to concepts *loss function* and *stochastic gradient descent*.
 - Extend the optimization approach to a binary classification problem. See [Basic concepts notes](docs/T1_basic_concepts.md).
 </details>
+
+---
 
 <details markdown="block">
 <summary><a name="T2"></a> 2. Basic concepts (Mar 6, 2026): Classification, logistic regression, entropy and cross-entropy, regularization, batch size</summary>
@@ -136,35 +141,32 @@ The goal of the following classes is to understand how ML models can be trained 
   
 </details>
 
-<!---
-
-
+---
 
 <details markdown="block">
-<summary> Decision trees (Mar 14, 2025): entropy, over-fitting, train and development </summary>
+<summary> 3. Decision trees (Mar 13, 2026): decision trees for classification, information gain, over-fitting, train and development sets </summary>
 
 - See (Raschka et al, 2022), Chapter 3: Decision tree learning (pg 86-98)
 - See [Decision tree notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T2_decision_trees_overfitting_train_test.md)
-- How to grow a decision tree
-- What is entropy and how does it help us to find the best model? Check  the Princeton video on [Information Theory Basics](https://www.youtube.com/watch?v=bkLHszLlH34).
-- The risk of over-fitting: train and development sets
-- Decision tree hyper-parameters
-- Exercise: create a decision tree for the [Soil detection for cotton crop problem](https://www.kaggle.com/datasets/zohasohail/soil-detection-for-cotton-crop) and determine the best values for hyper-parameters Maximum depth and Minimum leaf size.
-- Comparing  last session (perceptron) with this session (decision tree):
+- Check this video for an easy introduction to decision trees using `sklearn.tree.DecisionTreeClassifier`: [Pokemon classifier](https://www.youtube.com/watch?v=LLBGiAAZqAM)
+- The risk of over-fitting: train and development (validation) data sets
+- Decision tree hyper-parameters, e.g. `max_depth`
+- Exercise: create a decision tree for the [Soil detection for cotton crop problem](https://www.kaggle.com/datasets/zohasohail/soil-detection-for-cotton-crop) and determine the best values for hyper-parameters Maximum depth and Minimum leaf size using a development (validation) set.
+- Comparision of logistic regression with decision trees for classification:
 
-| Class | Mar 7 | Mar 14
-|--- |--- |---
-| Model | Perceptron | Decision tree
-| Problem | regression | classification
-| Data set | train only | train and development
-| Hyper-parameters | learning rate, number iterations | tree depth, leaf size, ...
-| Risk of over-fitting | very low | very high
-| Loss function | $MSE=\frac{1}{n}\sum_{i=1}^n \left(y_i-\hat{y}_i\right)^2$ | entropy:  $H({\rm \bf p})=-\sum_{i=1}^n \hat{p}_i \log_2 \hat{p}_i$
-| Optimization | backpropagation (SGD) | brute force (try all features and all thresholds)
-| Python package | PyTorch | scikit learn
-
+| Model | Logistic Regression | Decision tree |
+| --- | --- | ---|
+| Problem | Classification | Classification |
+| Hyper-parameters | learning rate, number iterations, ... | tree depth, leaf size, ... |
+| Risk of over-fitting | low | high |
+| Loss function | cross entropy: $-\log\_2\hat{p}\_i$, $i$ is the actual label | Gini, or entropy:  $-\sum_{i=1}^n\hat{p}\_i\log\_2\hat{p}\_i$ |
+| Optimization | Gradient descent | Brute force (try all features and all thresholds) |
   
 </details>
+
+---
+
+<!---
 
 <details markdown="block">
 <summary> Data preprocessing (Mar 21, 2025): pipelines, missing data, categorical features, scaling, train and test </summary>
