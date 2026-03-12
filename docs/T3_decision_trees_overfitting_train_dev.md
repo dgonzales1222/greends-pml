@@ -1,43 +1,46 @@
+# Tabular data
 
-In the topics below, we consider that examples are of tabular type, where each example is described by a numeric vector. Formally, the $i$-th example is described by a vector  $(x_{i1}, \dots, x_{ik})$ of length $k$, for examples $i = 1, \dots, n$ and labels are $y_1, \dots,  y_n$  as before. Non-numerical attributes can be in principle converted into numerical ones so that assumption holds.
+In the topics below, we consider that examples are of tabular type, where each example is described by a numeric vector. Formally, the $i$-th example is described by a vector  $(x_{i1}, \dots, x_{ik})$ of length $k$, for examples $i = 1, \dots, n$ and labels are $y_1, \dots,  y_n$  as before. Non-numerical attributes can be  converted into numerical ones so that assumption holds.
 
 # Decision trees
 
-This is a model for classification, where labels are categories. The goal, as for other ML models, is to be able to predict the label of a new example from its features (explanatory variables). The first example uses  the known Iris data set.
+This is a model for classification, where labels are categories. The goal, as for other ML models, is to be able to predict the label of a new example from its features (predictors). The first example uses the known Iris data set.
 
 The example below shows a decision tree for the iris data set. The root node represents the 4-dimensional space defined by the variables sepal length,sepal width, petal length, petal width. This is a 3-class problem where labels are the varieties setosa, versicolor, virginica.
 
-We call depth of the decision tree to the maximum number of splits to define a leaf node. Note that the code establishes `max_depth=4` to prevent the tree from growing more than 4 levels. The figure indicates the number of examples (or training samples) that lie in each node of the tree. Code to run in Colab
+We call depth of the decision tree to the maximum number of splits to define a leaf node. Note that the code establishes `max_depth=4` to prevent the tree from growing more than 4 levels. The figure indicates the number of examples (or training samples) that lie in each node of the tree. [Script (link to Colab)](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/basic_decision_tree.ipynb)
 
-<details markdown="block">
-<summary> Script: Basic decision tree classifier, plot tree, sklearn </summary>
+<!---
+<details>
+    
+<summary> Click to expand code: Basic decision tree classifier, plot tree, sklearn </summary>
 
-[**Script** (link to Colab)](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/basic_decision_tree.ipynb)
+```python
+from sklearn.datasets import load_iris
+from sklearn import tree
+from matplotlib import pyplot as plt
+iris = load_iris()
 
-    from sklearn.datasets import load_iris
-    from sklearn import tree
-    from matplotlib import pyplot as plt
-    iris = load_iris()
-    
-    X = iris.data
-    y = iris.target
-    print(' labels: ', iris.target_names)
-    
-    #build decision tree
-    clf = tree.DecisionTreeClassifier(criterion='entropy', max_depth=4,min_samples_leaf=4)
-    #max_depth represents max level allowed in each tree, min_samples_leaf minumum samples storable in leaf node
-    
-    #fit the tree to iris dataset
-    clf.fit(X,y)
-    
-    #plot decision tree
-    fig, ax = plt.subplots(figsize=(10, 10)) #figsize value changes the size of plot
-    tree.plot_tree(clf,ax=ax,feature_names=['sepal length','sepal width','petal length','petal width'])
-    plt.show()
+X = iris.data
+y = iris.target
+print(' labels: ', iris.target_names)
+
+#build decision tree
+clf = tree.DecisionTreeClassifier(criterion='entropy', max_depth=4,min_samples_leaf=4)
+#max_depth represents max level allowed in each tree, min_samples_leaf minumum samples storable in leaf node
+
+#fit the tree to iris dataset
+clf.fit(X,y)
+
+#plot decision tree
+fig, ax = plt.subplots(figsize=(10, 10)) #figsize value changes the size of plot
+tree.plot_tree(clf,ax=ax,feature_names=['sepal length','sepal width','petal length','petal width'])
+plt.show()
+```    
+</details>
+--->
 
 ---
-    
-</details>
 
 <details markdown="block">
 <summary> Impurity and loss </summary>
@@ -57,7 +60,7 @@ There are two types of decision trees in ML:
 1. **Classification trees**, where the labels are categorial as in the `iris`data set example. In that case, the **predicted** label is the most frequent label in the examples that lie the leaf node. For instance, if there are $[0,3,1]$ samples of varieties `[setosa, versicolor, virginica]` in a leaf node, then the label of the leaf node is `versicolor` and this is the predicted label $\hat{y}$ for all examples that lie in that region. To compute the *loss* one relies on the distribution of labels in the leaf node. For instance, the node with $[0,3,1]$ examples has estimated probabilities $\hat{p}_1=0$,  $\hat{p}_2=0.75$, $\hat{p}_3=0.25$ of been assigned to each one of the classes.
 2. **Regression trees**, where the labels are continuous. In that case, the label for the node is the mean of all labels of examples that lie in that node, i.e. $\hat{y}=\bar{y}$. The *loss* for the *i*-th example is then the dissimilarity between $\bar{y}$ and $y_i$. For *regression trees* the usual *loss* functions  are `mse`and `mae`.
 
-Let's see how the *loss* of a classification tree is computed in general and of a split in particular is computed. The loss is related to the impurity of the leaf nodes of the tree. The highest is the impurity of the leaf nodes, the largest is the classification uncertainty and the loss.
+Let's see how the *loss* of a classification tree is computed in general and of a split in particular is computed. The loss is a measure of the impurity and the associated uncertainty at the leaf nodes of the tree. The higher the impurity of the leaf nodes, the greater the classification uncertainty.
 
 For any given node of the tree, with $n_1,n_2,\dots,n_c$ examples of each class, the estimated probabilities for the $c$ different labels are:
 
@@ -65,10 +68,8 @@ $$\hat{p_1}=\frac{n_1}{n},\dots,\hat{p_c}=\frac{n_c}{n},$$
 
 where $n$ is the total number of examples at the node. For classification trees, the `DecisionTreeClassifier` class in `scikit-learn` uses one of the following criteria:
 
-1. `gini`: This is the default criterion and it measures the impurity of a set of samples as the probability of misclassifying a randomly chosen element from the set. The Gini *loss* for a node of the tree is given by  $G = 1 - \sum_{i=1}^n \hat{p_i}^2$, where $\hat{p_i}$ is the estimated probability of belonging to the *i*-th class.
-2. `entropy`: Entropy is a fundamental concept in machine learning that measures the level of disorder or uncertainty in a dataset. A higher entropy value indicates a more heterogeneous dataset with diverse classes, while a lower entropy signifies a more homogeneous and predictable  subset of data. It ranges from 0 to 1, with higher values indicating greater uncertainty. The entropy *loss* for a node of the tree is given by $E=-\sum_{i=1}^n \hat{p}_i \log_2 \hat{p}_i$.
-
-See for instance this [A Simple Explanation of Information Gain and Entropy](https://victorzhou.com/blog/information-gain/) and the Princeton video on [Information Theory Basics](https://www.youtube.com/watch?v=bkLHszLlH34).
+1. `gini`: This is the default criterion and it measures the impurity of a set of samples as the probability of misclassifying a randomly chosen element from the set. The Gini *loss* for a node of the tree is given by  $G = 1 - \sum_{i=1}^c \hat{p_i}^2$, where $\hat{p_i}$ is the estimated probability of belonging to the *i*-th class. The minimum value that $G$ can take is 0 (no uncertainty) which only occurs if one of the estimated probabilities is 1 (pure node).
+2. `entropy`: Entropy is a fundamental concept in machine learning that measures the level of uncertainty in a dataset. A higher entropy value indicates a more heterogeneous dataset with diverse classes, while a lower entropy signifies a more homogeneous and predictable  subset of data. It ranges from 0 to 1, with higher values indicating greater uncertainty. The entropy *loss* for a node of the tree is given by $E=-\sum_{i=1}^c \hat{p}_i \log_2 \hat{p}_i$. See for instance this [A Simple Explanation of Information Gain and Entropy](https://victorzhou.com/blog/information-gain/) with examples of binary decisions and calculations of entropy at each node.
 
 Both measures range from 0 (minimum impurity, maximum certainty) to some maximum value (maximum impurity, minimum certainty). For instance, for a 2-class problem, maximum impurity is reached when $p_1=p_2=0.5$, where
 
@@ -80,11 +81,11 @@ $$L = \frac{n_{\rm left}}{n} \times L_{\rm left} + \frac{n_{\rm right}}{n} \time
 
 The rules above allow us to compute the loss for any tree computed from the data set. For each new split, Equation 1 allows us to update the *loss* of the whole tree.
 
-For the two loss function above (`entropy` and `gini`), it is guaranteed that the *total loss* of the tree cannot increase for any possible split. Therefore, there is always a reduction (strict or not) in *loss*  resulting from a split which is also called *information gain*.
-
----
+For the two loss function above (`entropy` and `gini`), it is guaranteed that the *total loss* of the tree cannot increase for any possible split. Therefore, there is always a reduction (strict or not) in *loss*  resulting from a split. This is called *information gain*.
 
 </details>
+
+---
 
 <details markdown="block">
 <summary> Choosing the possible splits</summary>
@@ -108,15 +109,13 @@ $~~~~$ $~~~~$ Consider the split $x_j \le x_{j(i)}$, compute its loss decrease a
 
 The best split is the split $x_j \le x_{j(i)}$ which has the lowest value in $L$.
 
-----
-
-
+---
 
 For categorical explanatory variables, when there is no order along values, in principle all $2^m$ combinations of the $m$ distinct values that the variable can take should be considered as possible splits.
 
----
-
 </details>
+
+---
 
 <details markdown="block">
 <summary> Overfitting and regularization</summary>
@@ -126,23 +125,58 @@ For categorical explanatory variables, when there is no order along values, in p
 
 Decision trees are prone to *overfitting* since that if they grow enough they can approximate any decison rule with arbitrary precision. Therefore, there are different techniques to prevent decision trees of being  too large.
 
-1. Criterion to stop growing the tree, which is equivalent to decide when a node should not be splited and should become a leaf node. There are three standard hyper-parameters:
+1. Criteria to stop growing the tree, i.e. a node should is not splited and becomes a leaf node. These are the most common hyper-parameters (check all hyper-parameters for [`sklearn.tree.DecisionTreeClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html)):
   - Maximum depth of the tree (e.g. 4);
   - Minimum leaf size, i.e., minimum number of examples that lie in a leaf (e.g. 3);
   - Maximum number of nodes (e.g. 20).
 
-See all hyper-parameters for [`sklearn.tree.DecisionTreeClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html).
+2. Automating Hyperparameter Selection
+   
+   The sklearn package provides robust tools for dividing the data and searching through hyperparameter combinations to find the configuration that generalizes best to unseen data:
+   - train_test_split: Used to partition the original data set into training and development (validation) sets. The model learns on the training set, while the development set is used to evaluate performance across different hyperparameter settings.
+    - GridSearchCV: This performs an "exhaustive search" over a specified parameter grid. For example, if you want to test max_depth values of [3, 5, 10] and min_samples_leaf values of [1, 5, 10], it will train and evaluate all 9 possible combinations.
+    - RandomizedSearchCV: Instead of trying every possible combination, this samples a fixed number of parameter settings from specified distributions. This is often more efficient when dealing with a large number of hyperparameters.
+    - Cross-Validation (cv): Usually integrated into the search functions above, this splits the training data into multiple "folds" to ensure the hyperparameter performance is consistent and not just a result of a lucky data split.
 
-2. Pruning. This is a regularization technique that consists on pruning the full grown tree to reduce its size. Pruning can be achieved by:
+    A typical implementation looks like this:
+    <details>
+    
+    <summary> Click to expand Python script</summary>
+    
+    ```python
+    
+    from sklearn.model_selection import train_test_split, GridSearchCV
+    from sklearn.tree import DecisionTreeClassifier
+
+    # 1. Split data
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2)
+    
+    # 2. Define the parameter grid
+    param_grid = {
+        'max_depth': [3, 5, 10, None],
+        'min_samples_leaf': [1, 2, 5],
+        'criterion': ['gini', 'entropy']
+    }
+    
+    # 3. Initialize the search
+    grid_search = GridSearchCV(DecisionTreeClassifier(), param_grid, cv=5)
+    grid_search.fit(X_train, y_train)
+    
+    # 4. Access the best parameters
+    print(f"Best parameters: {grid_search.best_params_}")
+    ```
+
+    </details>
+
+4. Pruning. This is a regularization technique that consists on pruning the full grown tree to reduce its size. Pruning can be achieved by:
   - Adding a regularization hyper-parameter to the loss function, like $\alpha(|T|)$ where $\alpha$ is a function of the size (number of leaves) of the tree $T$. If one uses $L_\alpha=L+\alpha$ (consider that $\alpha >0$) instead of $L$ to determine the *loss*, then spliting a node might possibly cause an increase of $L_\alpha$.  If two leaves are pure and have the same label, aggregating them will lower $L_\alpha$ for $\alpha>0$. Pruning aggregates leaf nodes if that reduces $L_\alpha$.
   - Predicting a validation data set with the decision tree. Pruning consists of aggregating leaf nodes if that aggregation increases validation accuracy.
 
-See [Post pruning decision trees with cost complexity pruning of Scikit Learn](https://scikit-learn.org/stable/auto_examples/tree/plot_cost_complexity_pruning.html) for a detailed analysis on how to estimate the optimal regularization parameter $\alpha$ using train and developments data sets. 
-
----
+    See [Post pruning decision trees with cost complexity pruning of Scikit Learn](https://scikit-learn.org/stable/auto_examples/tree/plot_cost_complexity_pruning.html) for a detailed analysis on how to estimate the optimal regularization parameter $\alpha$ using train and developments data sets. 
 
 </details>
 
+<!---
 <details markdown="block">
 <summary> Choosing the best hyper-parameter values for a decision tree with a bias and variance plot</summary>
 
