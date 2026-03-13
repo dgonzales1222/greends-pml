@@ -146,8 +146,10 @@ The goal of the following classes is to understand how ML models can be trained 
 <details markdown="block">
 <summary> 3. Decision trees (Mar 13, 2026): decision trees for classification, information gain, over-fitting, train and development sets </summary>
 
-- Review structured code for the exercise of the previous class on [Breast Cancer Wisconsin data set](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data). Pipeline: train/test + pre-processing (scale features) + define model + fit Model + use model to predict; Other concepts: logistic regression; batch size, regularization parameter.
-- Discussion of [Assignment #1](notebooks/assign_1_wine_quality.ipynb)
+- Review structured code for the exercise of the previous class on [Breast Cancer Wisconsin data set](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data).
+    - Pipeline: train/test + pre-processing (scale features) + define model + fit Model + use model to predict;
+    - Other concepts: logistic regression; batch size, regularization parameter.
+- Discussion of [Assignment #1](notebooks/assign_1_wine_quality.ipynb). Keywords: input, output, model, loss function, epoch, batch, predict, train dataset, and (independent) test dataset.
 - See (Raschka et al, 2022), Chapter 3: Decision tree learning (pg 86-98)
 - See [Decision tree notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T2_decision_trees_overfitting_train_test.md)
 - Check this video for an easy introduction to decision trees using `sklearn.tree.DecisionTreeClassifier`: [Pokemon classifier](https://www.youtube.com/watch?v=LLBGiAAZqAM)
