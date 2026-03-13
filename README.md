@@ -151,7 +151,7 @@ The goal of the following classes is to understand how ML models can be trained 
     - Other concepts: logistic regression; batch size, regularization parameter.
 - Discussion of [Assignment #1](notebooks/assign_1_wine_quality.ipynb). Keywords: input, output, model, loss function, epoch, batch, predict, train dataset, and (independent) test dataset.
 - See (Raschka et al, 2022), Chapter 3: Decision tree learning (pg 86-98)
-- See [Decision tree notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T2_decision_trees_overfitting_train_test.md)
+- See [Decision tree notes](docs/T3_decision_trees_overfitting_train_dev.md)
 - Check this video for an easy introduction to decision trees using `sklearn.tree.DecisionTreeClassifier`: [Pokemon classifier](https://www.youtube.com/watch?v=LLBGiAAZqAM)
 - The risk of over-fitting: train and development (validation) data sets
 - Decision tree hyper-parameters, e.g. `max_depth`
