@@ -176,7 +176,7 @@ The goal of the following classes is to understand how ML models can be trained 
 
 
 <details markdown="block">
-<summary> Data preprocessing (Mar 20, 2026): pipelines, missing data, categorical features, scaling</summary>
+<summary> 4. Data preprocessing (Mar 20, 2026): pipelines, missing data, categorical features, scaling</summary>
 
 - See (Raschka et al, 2022), Chapter 4 (Data Preprocessing) and Chapter 6 (Streamlining workflows with pipelines)
 
@@ -192,7 +192,7 @@ The goal of the following classes is to understand how ML models can be trained 
   <img src="https://github.com/isa-ulisboa/greends-pml/blob/main/docs/supervised_learning_flowchart_raschka_2022.png" alt="Alt Text" width="600" >
   </details>
 - The Titanic data set example: See [Pre-processing notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T3_missing_data_categorical_scaling.md)
-- Dealing with missing data;
+- Removing and imputing missing values from the data set
 - Handling categorical data;
 - Bringing features onto the same scale;
 - Partitioning a dataset into separate training and test datasets;
