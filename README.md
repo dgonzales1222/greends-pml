@@ -179,7 +179,7 @@ The goal of the following classes is to understand how ML models can be trained 
 <summary> 4. Data preprocessing (Mar 20, 2026): pipelines, missing data, categorical features, scaling</summary>
 
 - See (Raschka et al, 2022), Chapter 4 (Data Preprocessing) and Chapter 6 (Streamlining workflows with pipelines)
-
+- See [Scikit-Learn ML basic tutorial](https://www.youtube.com/playlist?list=PLSE7WKf_qqo0lmPLmigvXDTDcKcGhre32), sections 12, 13, 14 and 15.
 - Supervised learning flowchart
   <details markdown="block">
   <summary>Figure 1.9 (Raschka et al, 2022) </summary>
