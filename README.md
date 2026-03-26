@@ -204,11 +204,6 @@ The goal of the following classes is to understand how ML models can be trained 
 <summary>5. Model Evaluation and hyper-parameter Tuning (Mar 27, 2026): cross-validation, strata and groups, grid-search </summary>
 
 - See (Raschka et al, 2022), Chapter 6: Learning Best Practices for Model Evaluation and hyper-parameter Tuning
-
-</details>
-
-<!---
-
 - See [Cross-validation and hyper-parameter tuning notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T4_cross_validation.md)
 - Streamlining workflows with pipelines
 - Using k-fold cross-validation to assess model performance
@@ -218,10 +213,15 @@ The goal of the following classes is to understand how ML models can be trained 
 </details>
 
 <details markdown="block">
-<summary>  Evaluation metrics (Apr 4, 2025): confusion matrix, precision, recall, F1-score, ROC curve, AUC </summary>
+<summary>  Evaluation metrics (Apr 10, 2026): confusion matrix, precision, recall, F1-score, ROC curve, AUC </summary>
+
+<!---
+
+</details>
 
 - See (Raschka et al, 2022), Chapter 6: Learning Best Practices for Model Evaluation and hyper-parameter Tuning
 - See [Cross-validation and hyper-parameter tuning notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T4_cross_validation.md)
+- Check video [Complete guide to cross-validation](https://www.google.com/search?client=firefox-b-d&hs=M8F&sa=X&sca_esv=ea79f29eab3dedca&sxsrf=ANbL-n52glIguINYT9mbWgCjy-ZXtaWjdA:1774536555619&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-Uy1yO4MtdEOyw56oQr4pD_xy9m9pUVOBFZgMYXBhoTkwcXjEVdjxilFCaKGaLRAsUSY7tYUnSuHswSwuSw_nQtstn67jn2dndqdLjdJqSsMbrfWlU84G5ZyyLRLuzVGbW-9LLuv7Kzh4BbLjrscozO5zF7IvkIOpYmvtpKowhIl1BVkcGzMW-SqCwtcoKLNPM3XrHgXAapOSBT9p3IE78H-RrEA&udm=7&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpmAsnXCN5UBx17opt8eaTX5MJRoosnbembaWTjeNSquIxro2mrW6zffXrbXZY-opPXGY0Rt_bdDSE237xSnWdKR3dIcuWpVYnCh4I-6IiMCln65mNNN2yH1ysO3lP5K7J78yX6_da8m1AE3qAXevBHCVFtwF3sLVw9ZzZFWqV0P01yhOM&q=Cross+validation+with+sklearn+tutorial&ved=2ahUKEwiloafo572TAxXXxgIHHb9KCtsQtKgLegQIEBAB&biw=1536&bih=769&dpr=2.5#fpstate=ive&ip=1&vld=cid:077c95e2,vid:-8s9KuNo5SA,st:0) 12:40-end. Note that the dataset used for this tutorial is the "Stroke prediction data" where one of the features is the patient's doctor. This information is important because individuals should be *grouped* according to this feature.
 - Looking at different performance evaluation metrics
 - Reading a confusion matrix 
 - Optimizing the precision and recall of a classification model
