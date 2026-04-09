@@ -223,6 +223,7 @@ The goal of the following classes is to understand how ML models can be trained 
 </details>
 
 - See (Raschka et al, 2022), Chapter 6: Learning Best Practices for Model Evaluation and hyper-parameter Tuning
+- See notes on  [Evaluating performance](https://github.com/isa-ulisboa/greends-pml/blob/main/T6_evaluate_accuracy.md)
 - Reading a confusion matrix 
 - Optimizing the precision and recall of a classification model
 - Plotting a receiver operating characteristic (ROC)
@@ -232,7 +233,7 @@ The goal of the following classes is to understand how ML models can be trained 
 </details>
 
 <details markdown="block">
-<summary>  Combining Different Models for Ensemble Learning (April 24, 2025): random forest, gradient boosting, variable importance </summary>
+<summary>  7. Combining Different Models for Ensemble Learning (April 24, 2025): random forest, gradient boosting, variable importance </summary>
 
 - See (Raschka et al, 2022), Chapter 7:  Combining Different Models for Ensemble Learning
 
