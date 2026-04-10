@@ -101,7 +101,7 @@ $${\rm CE}=\frac{{\rm FP}}{{\rm TP}+{\rm FP}}.$$
 
 3. **Recall**, focused on actual positives, and also called **sensitivity** or **true positive rate (TPR)**
 
-$${\rm recall}=\frac{{\rm TP}}{{\rm TP}+{\rm FN}}.$$
+$${\rm recall}={\rm TPR}=\frac{{\rm TP}}{{\rm TP}+{\rm FN}}.$$
 
 The denominator here is the total number of actual positives. This is an interesting metric if we are focused on having a very low error on missing an actual positive (a typical example is missing a tumor in medecine).
 
@@ -113,13 +113,18 @@ $${\rm OE}=\frac{{\rm FN}}{{\rm TP}+{\rm FN}}.$$
 
 For instance, one wants the *sensitivity* of a disease test to be high to ensure that sick people are detected.
 
+
 ---
 
 4. **Specificity**, is focused on actual negatives, and is also called **true negative rate (TNR)**
 
-$${\rm specificity}=\frac{{\rm TN}}{{\rm TN}+{\rm FP}}.$$
+$${\rm specificity}=\frac{{\rm TN}}{{\rm FP}+{\rm TN}}.$$
 
 For instance, one wants the *specificity* of a disease test to be high to prevent healthy people from being labeled as sick.
+
+A related metric is the **false positive rate (FPR)**, where the relation is ${\rm TNR} = 1 - {\rm FPR}$. 
+
+$${\rm FPR}=\frac{{\rm FP}}{{\rm FP}+{\rm TN}}.$$
 
 ---
 
