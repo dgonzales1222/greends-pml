@@ -224,12 +224,11 @@ The goal of the following classes is to understand how ML models can be trained 
 
 - See (Raschka et al, 2022), Chapter 6: Learning Best Practices for Model Evaluation and hyper-parameter Tuning
 - Revise pipelines, train vs test -- see diagram (https://github.com/isa-ulisboa/greends-pml/blob/main/docs/holdout_method_fig62.png)
-- Complete exercise [spanish white wines high ratings](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/spanish_white_wine_high_ratings.ipynb)
 - See notes on  [Evaluating performance](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T6_evaluate_accuracy.md)
-- See [binary classification metrics table](https://en.wikipedia.org/wiki/Template:Diagnostic_testing_diagram)
-- Confusion matrix 
-- Optimizing the precision and recall of a classification model
-- Plotting a receiver operating characteristic curve, also known as relative operating characteristic curve (ROC)
+- Complete exercise [spanish white wines high ratings](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/spanish_white_wine_high_ratings.ipynb)
+- Suggestion: check video on [Evaluation Metrics For Classification - Full Overview](https://www.youtube.com/watch?v=pGPiRRfNsr0)
+- See [binary classification metrics table](https://en.wikipedia.org/wiki/Template:Diagnostic_testing_diagram): confusion matrix and derived metrics
+- Receiver operating characteristic curve, also known as relative operating characteristic curve (ROC) and precion-recall curves
 - Scoring metrics for multiclass classification 
 - Dealing with class imbalance
 
