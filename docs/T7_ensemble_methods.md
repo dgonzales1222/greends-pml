@@ -79,7 +79,7 @@ Random forests are ensemble learning methods that involve:
   
   For simplicity, let's consider regression trees and show that the goal of ensembling trees with random forests is reducing the variance. 
   
-  Let  $X_i$ be  the random variable  that represents the predition for the regression tree $T_i$ from the collection, with $\rho={\rm cor}[X_i,X_j]$ being the correlation between $X_i$ and $X_j$. The prediction from the ensemble is
+  Let  $X_i$ be  the random variable  that represents the predition for the regression tree $T_i$ from the collection, with $\rho={\rm cor}\[X_i,X_j\]$ being the correlation between $X_i$ and $X_j$. The prediction from the ensemble is
   
   $$\bar{X}=\frac{1}{n} \left( X_1+\dots+X_B \right)$$
   
