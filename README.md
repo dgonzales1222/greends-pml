@@ -247,9 +247,10 @@ The goal of the following classes is to understand how ML models can be trained 
 
 </details>
 
+---
 
 <details markdown="block">
-<summary> Neural networks, Backpropagation (May 8, 2026): gradient descent, forward pass, backward pass, PyTorch, optimizer, ... </summary>
+<summary> 8. Neural networks, Backpropagation (May 8, 2026): gradient descent, forward pass, backward pass, PyTorch, optimizer, ... </summary>
 
 - Video on the Perceptron and early times of AI [The First Neural Networks](https://www.youtube.com/watch?v=e5dVSygXbAE&t=88s)
 - See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification
