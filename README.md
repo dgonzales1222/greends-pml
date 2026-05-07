@@ -250,40 +250,27 @@ The goal of the following classes is to understand how ML models can be trained 
 ---
 
 <details markdown="block">
-<summary> 8. Neural networks, Backpropagation (May 8, 2026): gradient descent, forward pass, backward pass, PyTorch, optimizer, ... </summary>
+<summary> 8. Data pipeline for deep learning  (May 8, 2026):  PyTorch, datasets, dataloaders</summary>
 
-- Video on the Perceptron and early times of AI [The First Neural Networks](https://www.youtube.com/watch?v=e5dVSygXbAE&t=88s)
-- See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification
-
-<!---
-
-- See [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md). 
-- Revise solutions for the problems listed in the previous class.
-- Backpropagation and computation graph
-- `PyTorch` pipeline: loss, optimizer
-- The following table illustrates the changes from a basic Python script which is dependent on the model, loss, etc,  to a PyTorch higher-level script that can easily generalized to other models, loss functions or optimizer strategies.
-
-| Basic Python | PyTorch 
-|---|---
-| Define model explicitly | Use a pre-defined model
-|`def predict(x):`|`torch.nn.Linear(in_size,out_size)`
-| Define loss explicitly | Use a pre-defined loss function
-|`def loss(y,y_pred):`|`loss=torch.nn.MSEloss(y,y_pred)`
-| Loss optimization strategy | Use a pre-defined optimizer
-| Code explicitly| `optimizer=torch.optim.SGD(params, learn_rate)`
-| Compute *ad hoc* gradient | **Use built-in backpropagation mechanism**
-|`def gradient(x,y,y_pred):`|`loss.backward()`
-|Update weights explicitly| `optimizer.step()`
+- Videos on the history of neural networks: Video on the Perceptron and early times of AI [The First Neural Networks](https://www.youtube.com/watch?v=e5dVSygXbAE&t=88s); Video on [ChatGPT is made from 100 million of these [The Perceptron]](https://www.youtube.com/watch?v=l-9ALe3U-Fg)
+- See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification; review [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md) for some fundamentals about ML that also apply to deep learning.
+- `PyTorch` pipeline: see [illustration of a PyTorch workflow](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/01_a_pytorch_workflow.png)
+- See [Notebook on introduction to data pipelines for deep learning](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T8_pytorch_dataset_dataloader.ipynb). With deep learning (DL), it is possible to solve problems that involve complex input data like images, text and audio. The first step in order to apply DL is to organize the input data. PyTorch provides some key tools like `Dataset` and `DataLoader` that allow the creation of robust pipelines for DL.
+- Check notebook for [assignment 3, available on Moodle](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T8_torch_NN_pipeline_and_questions_for_assign_3.ipynb) and explore in particular the concepts of `Dataset`and `Dataloader` in that notebook.
+- See (Raschka et al, 2022), Chapter 12: Parallelizing Network Training with PyTorch.
 
 </details>
 
+---
 
 <details markdown="block">
-<summary> Data pipeline for deep learning  (May 9, 2025):  PyTorch, datasets, dataloaders</summary>
+<summary> 9. Neural networks (May 15, 2026): backpropagation, gradient descent, forward pass, backward pass, PyTorch, optimizer, ... </summary>
 
-- See (Raschka et al, 2022), Chapter 12:   Parallelizing Neural Network Training with PyTorch
-- See [Notebook on introduction to data pipelines for deep learning](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T6_pytorch_dataset_dataloader.ipynb). With deep learning (DL), it is possible to solve problems that involve complex input data like images, text and audio. The first step in order to apply DL is to organize the input data. PyTorch provides some key tools like `Dataset` and `DataLoader` that allow the creation of robust pipelines for DL.
+- See (Raschka et al, 2022), Chapter 12: Parallelizing Network Training with PyTorch.
 - See [Veritasium video (3'42 to 14'50)](https://www.youtube.com/watch?v=GVsUOuSjvcg) for an historic introduction to multilayer neural networks  for deep learning.
+<!---
+
+
 - Run an interpret the code in pages 386-388 with an example of a dataset (`CelebA`) with several labels.
   
 </details>
