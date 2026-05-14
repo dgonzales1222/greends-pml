@@ -268,10 +268,26 @@ The goal of the following classes is to understand how ML models can be trained 
 20:59 Model, Loss & Optimizer; 
 27:11 Neural Network; 
 38:08 Convolutional Neural Net. Application: image classification CIFAR10 data set (objects color images).
-  - [PyTorch Course (30'), Image Classification (MNIST)](https://www.youtube.com/watch?v=gBw0u_5u0qU). MNIST data set, dataloader, simple fully connected NN model mwith 3 layers, validation and testing. Code using PyTorch.
+  - [PyTorch Course (30'), Image Classification (MNIST)](https://www.youtube.com/watch?v=gBw0u_5u0qU). Data set, dataloader, simple fully connected NN model mwith 3 layers, validation and testing. Application: MNIST.
   
-  - [Build Your First Pytorch Model In Minutes: Tutorial + Code](https://www.youtube.com/watch?v=tHL5STNJKag). The pipeline has 3 parts: PyTorch DataSet (4'49-14'); PyTorch model (14':19'24); PyTorch training loop (19'24:25'). The application is image classification.
-  - [MIT Introduction to Deep Learning 2025 (1:09)](https://www.youtube.com/watch?v=alfdI7S6wCY); Introduction up to "What is Deep Learning" (10'57); Why deep learning and why now (15'06); Building Neural Networks with Perceptrons (27'13); Applying NNs (35'30); Training NNs (41'21); NN in practice: Optimization (48'05).
+  - [Build Your First Pytorch Model In Minutes: Tutorial + Code](https://www.youtube.com/watch?v=tHL5STNJKag).
+    00:00 Intro; 
+04:50 Pytorch Datasets; 
+13:59 Pytorch Model (EfficientNet, with added FC layer); 
+19:19 Pytorch Training; 
+29:23 Results. The application is image classification (recognize playing cards). Note that this example illustrates the idea of *transfer learning*.
+
+  - [PyTorch in 1 Hour](https://www.youtube.com/watch?v=r1bquDz5GGA). 0:00:00 - Introduction
+0:01:55 - torch.tensor; 
+0:07:32 - Autograd & requires_grad; 
+0:09:21 - Computation Graph & .grad_fn; 
+0:12:50 - Element-wise vs. Matrix Multiplication; 
+0:15:25 - Reduction Operations & The dim Argument; 
+0:30:25 - loss.backward(); 
+0:34:12 - Gradient Descent Update Rule; 
+0:40:23 - torch.nn.Module; 
+0:52:19 - torch.optim; 
+0:57:30 - Transformer Feed-Forward Network; 
 
 </details>
 
