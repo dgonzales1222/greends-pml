@@ -262,7 +262,7 @@ The goal of the following classes is to understand how ML models can be trained 
 - Further suggestions of videos (for this class and next class):
   - [PyTorch Course (2022), Part 4: Image Classification (MNIST)](https://www.youtube.com/watch?v=gBw0u_5u0qU)
   - [PyTorch Crash Course - Getting Started with Deep Learning](https://www.youtube.com/watch?v=OIenNRt2bjg)
-  - [Build Your First Pytorch Model In Minutes! [Tutorial + Code](https://www.youtube.com/watch?v=tHL5STNJKag)
+  - [Build Your First Pytorch Model In Minutes: Tutorial + Code](https://www.youtube.com/watch?v=tHL5STNJKag). The pipeline has 3 parts: PyTorch DataSet (4'49-14'); PyTorch model (14':19'24); PyTorch training loop (. The application is image classification.
   - [MIT Introduction to Deep Learning 2025 (1:09)](https://www.youtube.com/watch?v=alfdI7S6wCY); Introduction up to "What is Deep Learning" (10'57); Why deep learning and why now (15'06); Building Neural Networks with Perceptrons (27'13); Applying NNs (35'30); Training NNs (41'21); NN in practice: Optimization (48'05).
 
 </details>
