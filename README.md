@@ -250,7 +250,7 @@ The goal of the following classes is to understand how ML models can be trained 
 ---
 
 <details markdown="block">
-<summary> 8. Introduction to deep learning; data pipeline  (May 8, 2026):  PyTorch, datasets, dataloaders</summary>
+<summary> 8. Introduction to deep learning; data pipeline with PyTorch (May 8, 2026):  datasets, dataloaders</summary>
 
 - Videos on the history of neural networks: Video on the Perceptron and early times of AI [The First Neural Networks](https://www.youtube.com/watch?v=e5dVSygXbAE&t=88s); Video on [ChatGPT is made from 100 million of these [The Perceptron]](https://www.youtube.com/watch?v=l-9ALe3U-Fg)
 - See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification; review [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md) for some fundamentals about ML that also apply to deep learning, and also Chapter 12: Parallelizing Network Training with PyTorch.
@@ -270,7 +270,7 @@ The goal of the following classes is to understand how ML models can be trained 
 ---
 
 <details markdown="block">
-<summary> 9. Neural networks (May 15, 2026): backpropagation, gradient descent, forward pass, backward pass, PyTorch, optimizer, ... </summary>
+<summary> 9. Neural networks (May 15, 2026): backpropagation, gradient descent, forward pass, backward pass,  optimizer, ... </summary>
   
 - See (Raschka et al, 2022), Chapter 12: pp 389 to the end,  and Chapter 13: Going Deeper – The Mechanics of PyTorch, namely the MNIST project (ppp 436-439)
 
