@@ -267,8 +267,8 @@ The goal of the following classes is to understand how ML models can be trained 
 <summary> 9. Neural networks (May 15, 2026): backpropagation, gradient descent, forward pass, backward pass,  optimizer, ... </summary>
   
 - See (Raschka et al, 2022), Chapter 12: pp 389 to the end,  and Chapter 13: Going Deeper – The Mechanics of PyTorch, namely the MNIST project (ppp 436-439)
-- In Google Colab, prompt the AI bot with *Create a PyTorch script to train a fully connected neural network for the MNIST data set* and analyze the proposed script.
-- See [Notebook the typical pipeline for deep learning with (non-convolutional) neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9_torch_NN_pipeline_MNIST88.ipynb) that explores and discusses the pipeline for applying a (non conviolutional) NN to the MNIST data set.
+- In Google Colab, prompt the AI bot with "Create a PyTorch script to train a fully connected neural network for the MNIST data set" and analyze the proposed script.
+- See [Notebook the typical pipeline for deep learning with (non-convolutional) neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9_torch_NN_pipeline_MNIST88.ipynb) that explores and discusses the pipeline for applying a (non convolutional) NN to the MNIST data set and validate results.
 - Video suggestions:
   - [PyTorch Crash Course - Getting Started with Deep Learning (50')](https://www.youtube.com/watch?v=OIenNRt2bjg). Detailed discussion of PyTorch Deep Learning framework with simple examples.
 00:00 Intro & Overview
