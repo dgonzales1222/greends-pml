@@ -267,8 +267,8 @@ The goal of the following classes is to understand how ML models can be trained 
 <summary> 9. Neural networks (May 15, 2026): backpropagation, gradient descent, forward pass, backward pass,  optimizer, ... </summary>
   
 - See (Raschka et al, 2022), Chapter 12: pp 389 to the end,  and Chapter 13: Going Deeper – The Mechanics of PyTorch, namely the MNIST project (ppp 436-439)
-- In Google Colab, prompt the AI bot with "Create a PyTorch script to train a fully connected neural network for the MNIST data set" and analyze the proposed script.
-- See [Notebook the typical pipeline for deep learning with (non-convolutional) neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9_torch_NN_pipeline_MNIST88.ipynb) that explores and discusses the pipeline for applying a (non convolutional) NN to the MNIST data set and validate results.
+- In Google Colab or some other platform, prompt the AI bot with "Create a PyTorch script to train a fully connected neural network for the MNIST data set". Analyze the proposed script.
+- See [Notebook the typical pipeline for deep learning with (non-convolutional) neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9_torch_NN_pipeline_MNIST88.ipynb) that explores and discusses a PyTorch pipeline for applying a (non convolutional) NN to the MNIST data set and validate results.
 - Video suggestions:
   - [PyTorch Crash Course - Getting Started with Deep Learning (50')](https://www.youtube.com/watch?v=OIenNRt2bjg). Detailed discussion of PyTorch Deep Learning framework with simple examples.
 00:00 Intro & Overview
@@ -300,38 +300,20 @@ The goal of the following classes is to understand how ML models can be trained 
 0:52:19 - torch.optim; 
 0:57:30 - Transformer Feed-Forward Network; 
 
-
-<!---
-
-- Notes on [Computing gradients in PyTorch](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T8_computing_gradients_with_pytorch.md) with links to videos on *Backpropagation* and  *Gradient Descent with Autograd and Backpropagation*. 
-
-
-
-
-- Run an interpret the code in pages 386-388 with an example of a dataset (`CelebA`) with several labels.
+- Notes on [Computing gradients in PyTorch](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T8_computing_gradients_with_pytorch.md) with links to videos on *Backpropagation* and  *Gradient Descent with Autograd and Backpropagation*.
   
 </details>
 
+---
 
 <details markdown="block">
-<summary> Pipeline for deep learning with PyTorch (May 16, 2025):  data, model, model training and validation</summary>
-
-- See (Raschka et al, 2022), Chapter 12: pp 389 to the end,  and Chapter 13: Going Deeper – The Mechanics of PyTorch, namely the MNIST project (ppp 436-439)
-- See [Notebook the typical pipeline for deep learning with (non-convolutional) neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T7_torch_NN_pipeline.ipynb). In particular, we explore the MNIST dataset.
-- Assignment #3 available on Moodle
-- Suggestions of videos:
-  - [PyTorch Course (2022), Part 4: Image Classification (MNIST)](https://www.youtube.com/watch?v=gBw0u_5u0qU)
-  - [PyTorch Crash Course - Getting Started with Deep Learning](https://www.youtube.com/watch?v=OIenNRt2bjg)
-  - [Build Your First Pytorch Model In Minutes! [Tutorial + Code](https://www.youtube.com/watch?v=tHL5STNJKag)
-  - [MIT Introduction to Deep Learning 2025 (1:09)](https://www.youtube.com/watch?v=alfdI7S6wCY); Introduction up to "What is Deep Learning" (10'57); Why deep learning and why now (15'06); Building Neural Networks with Perceptrons (27'13); Applying NNs (35'30); Training NNs (41'21); NN in practice: Optimization (48'05).
-    
-</details>
-
-<details markdown="block">
-<summary> Deep convolutional neural networks  (May 23, 2025): input preparation, convolution, model architecture, receptive field </summary>
+<summary> 10. Deep convolutional neural networks  (May 22, 2026): input preparation, convolution, model architecture, receptive field </summary>
 
 - See (Raschka et al, 2022), Chapter 14: Classifying Images with Deep Convolutional Neural Networks
 - Check introductory video [What are CNNs?, by IBM (6'20)](https://www.youtube.com/watch?v=QzY57FaENXg)
+
+<!---
+
 - See [Notebook on introduction convolutional neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9_CNNs_for_image_classification.ipynb). 
 - Application of CNNs to the MNIST problem.
 - Some techniques to improve deep learning: regularization, dropout, self-regularized activation functions, momentum, adaptive optimization. See https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T8_techniques_to_improve_DP.ipynb
