@@ -255,12 +255,22 @@ The goal of the following classes is to understand how ML models can be trained 
 - Videos on the history of neural networks: Video on the Perceptron and early times of AI [The First Neural Networks](https://www.youtube.com/watch?v=e5dVSygXbAE&t=88s); Video on [ChatGPT is made from 100 million of these [The Perceptron]](https://www.youtube.com/watch?v=l-9ALe3U-Fg)
 - See (Raschka et al, 2022), Chapter 2: Training Simple Machine Learning Algorithms for Classification; review [Basic concepts notes](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T1_basic_concepts.md) for some fundamentals about ML that also apply to deep learning, and also Chapter 12: Parallelizing Network Training with PyTorch.
 - Introduction to neural networks. See video [But what is a neural network? | Deep learning chapter 1, from 3Blue1Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) on deep learning with an example of a fully connected neural network with two hidden layers for handwritten digit recognition.
-- Notes on [Computing gradients in PyTorch](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T8_computing_gradients_with_pytorch.md) with links to videos on *Backpropagation* and  *Gradient Descent with Autograd and Backpropagation*. 
 - General `PyTorch` pipeline: see [illustration of a PyTorch workflow](https://raw.githubusercontent.com/mrdbourke/pytorch-deep-learning/main/images/01_a_pytorch_workflow.png)
 - See [Notebook on introduction to data pipelines for deep learning](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T8_pytorch_dataset_dataloader.ipynb). With deep learning (DL), it is possible to solve problems that involve complex input data like images, text and audio. The first step in order to apply DL is to organize the input data. PyTorch provides some key tools like `Dataset` and `DataLoader` that allow the creation of robust pipelines for DL.
 - Assignment 3, available on Moodle. Explore in particular the concepts of `Dataset` and `Dataloader` in that notebook.
-- Further suggestions of videos (for this class and next class):
-  - [PyTorch Crash Course - Getting Started with Deep Learning (50')](https://www.youtube.com/watch?v=OIenNRt2bjg). Detailed discussion of PyTorch Deep Learning framework with simple examples. 00:00 Intro & Overview
+
+</details>
+
+---
+
+<details markdown="block">
+<summary> 9. Neural networks (May 15, 2026): backpropagation, gradient descent, forward pass, backward pass,  optimizer, ... </summary>
+  
+- See (Raschka et al, 2022), Chapter 12: pp 389 to the end,  and Chapter 13: Going Deeper – The Mechanics of PyTorch, namely the MNIST project (ppp 436-439)
+- See [Notebook the typical pipeline for deep learning with (non-convolutional) neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T7_torch_NN_pipeline.ipynb). In particular, we explore the MNIST dataset.
+- Video suggestions:
+  - [PyTorch Crash Course - Getting Started with Deep Learning (50')](https://www.youtube.com/watch?v=OIenNRt2bjg). Detailed discussion of PyTorch Deep Learning framework with simple examples.
+00:00 Intro & Overview
 00:54 Installation & Overview; 
 02:37 Tensor Basics; 
 11:14 Autograd; 
@@ -268,7 +278,6 @@ The goal of the following classes is to understand how ML models can be trained 
 20:59 Model, Loss & Optimizer; 
 27:11 Neural Network; 
 38:08 Convolutional Neural Net. Application: image classification CIFAR10 data set (objects color images).
-  - [PyTorch Course (30'), Image Classification (MNIST)](https://www.youtube.com/watch?v=gBw0u_5u0qU). Data set, dataloader, simple fully connected NN model mwith 3 layers, validation and testing. Application: MNIST.
   
   - [Build Your First Pytorch Model In Minutes: Tutorial + Code](https://www.youtube.com/watch?v=tHL5STNJKag).
     00:00 Intro; 
@@ -277,7 +286,8 @@ The goal of the following classes is to understand how ML models can be trained 
 19:19 Pytorch Training; 
 29:23 Results. The application is image classification (recognize playing cards). Note that this example illustrates the idea of *transfer learning*.
 
-  - [PyTorch in 1 Hour](https://www.youtube.com/watch?v=r1bquDz5GGA). 0:00:00 - Introduction
+  - [PyTorch basic concepts](https://www.youtube.com/watch?v=r1bquDz5GGA). This video describes basic concepts and constructs from PyTorch in a clear way. 
+0:00:00 - Introduction
 0:01:55 - torch.tensor; 
 0:07:32 - Autograd & requires_grad; 
 0:09:21 - Computation Graph & .grad_fn; 
@@ -289,19 +299,11 @@ The goal of the following classes is to understand how ML models can be trained 
 0:52:19 - torch.optim; 
 0:57:30 - Transformer Feed-Forward Network; 
 
-</details>
-
----
-
-<details markdown="block">
-<summary> 9. Neural networks (May 15, 2026): backpropagation, gradient descent, forward pass, backward pass,  optimizer, ... </summary>
-  
-- See (Raschka et al, 2022), Chapter 12: pp 389 to the end,  and Chapter 13: Going Deeper – The Mechanics of PyTorch, namely the MNIST project (ppp 436-439)
 
 <!---
 
-- See (Raschka et al, 2022), Chapter 12: Parallelizing Network Training with PyTorch.
-- See [Veritasium video (3'42 to 14'50)](https://www.youtube.com/watch?v=GVsUOuSjvcg) for an historic introduction to multilayer neural networks  for deep learning.
+- Notes on [Computing gradients in PyTorch](https://github.com/isa-ulisboa/greends-pml/blob/main/docs/T8_computing_gradients_with_pytorch.md) with links to videos on *Backpropagation* and  *Gradient Descent with Autograd and Backpropagation*. 
+
 
 
 
