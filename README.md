@@ -313,8 +313,22 @@ The goal of the following classes is to understand how ML models can be trained 
 - Check introductory video [What are CNNs?, by IBM (6'20)](https://www.youtube.com/watch?v=QzY57FaENXg)
 - Example: very compact notebook for [Grape disease identification](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T10_CNN_Grape_Disease_Identification_Yolo8n.ipynb). The goal is to train a convolutional neural network (CNN) to identify if the plant is healthy or has  Black Rot, ESCA, Leaf Blight, using data from the [Grapevine Disease Dataset](https://www.kaggle.com/datasets/rm1000/grape-disease-dataset-original) and a pre-trained YOLO model. We see how to fine-tune the model from data already saved on Google Drive and interpret the model and the results.
 - Notebook on [Convolutional NNs for image classification](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T10_CNNs_for_image_classification.ipynb). This notenoob focus on some of the main parameters for CNNs: convolutions and kernels, padding, pooling, stride, activation map, receptive field, batch normalization and dropout.
-- CNNs for image identification, image detection and image segmentation.
+- CNNs for image identification, image detection (e.g. YOLO, R-CNNs) and image segmentation (e.g. U-nets): encoders and decoders.
 - Autoencoders: this is a very powerful technique that can be implemented with neural networks. Check the example for MNIST with a NN and a CNN at [Autoencoder In PyTorch - Theory & Implementation](https://www.youtube.com/watch?v=zp8clK9yCro)
+
+</details>
+
+---
+
+<details markdown="block">
+<summary> 11. Model deployment  (May 29, 2026):  saving and loading ML model, Gradio, Hugging Face places</summary>
+
+- Suggestions of videos:
+  - [How to deploy a gradio app on huggingface (43')](https://www.youtube.com/watch?v=bN9WTxzLBRE&t=1845s)
+  - [How to Create a Hugging Face Space: A Beginner's Guide (16')](https://www.youtube.com/watch?v=xqdTFyRdtjQ). Very clear video with a list of steps for creating HF space, creating basic files, testing on the local machine and pushing the Gradio interface into HF spaces. However, there are no details about the `app.py` code itself nor about the model that is deployed.
+- Assignment #4: deploy a ML model on HF spaces (see Moodle)
+  
+</details>
 
 <!---
 
@@ -327,7 +341,7 @@ The goal of the following classes is to understand how ML models can be trained 
 </details>
 
 <details markdown="block">
-<summary> Model deployment  (May 30, 2025):  saving and loading ML model, Gradio, Hugging Face places</summary>
+<summary> 11. Model deployment  (May 29, 2025):  saving and loading ML model, Gradio, Hugging Face places</summary>
 
 - Saving and loading a PyTorch model. The following notebooks contain full pipelines to train a classifier for the MNIST dataset, including training (with `cuda` if available) and validation. The novelty is that we save the trained model after each epoch so it can be loaded later (for validation). This illustrates how a trained ML model can be saved to a file and loaded from a file, which is needed for deployment, fine-tuning and transfer learning.
   - https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9b_MNIST_CNNs_pipeline_save_load_model.ipynb : save the full model, which only works if the model is saved and loaded in the same device, which can be adequate for development in a local machine but is not recommended in general;
