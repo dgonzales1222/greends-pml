@@ -315,7 +315,7 @@ The goal of the following classes is to understand how ML models can be trained 
 - Notebook on [Convolutional NNs for image classification](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T10_CNNs_for_image_classification.ipynb). This notenook focus on some of the main parameters for CNNs: convolutions and kernels, padding, pooling, stride, activation map, receptive field, batch normalization and dropout.
 - CNNs for image identification, image detection (e.g. YOLO, R-CNNs) and image segmentation (e.g. U-nets): encoders and decoders. Check video [MIT 6.S191: Convolutional Neural Networks](https://www.youtube.com/watch?v=pqIcoskUuWs&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI).
 - In Google Colab or another IDE with an AI bot, prompt "Create a PyTorch script from that shows how to fine tune a custom U-net for image segmentation" and analyze the proposed notebook.
-- Autoencoders: this is a very powerful technique that can be implemented with neural networks. Check the example for MNIST with a NN and a CNN at [Autoencoder In PyTorch - Theory & Implementation](https://www.youtube.com/watch?v=zp8clK9yCro)
+- Autoencoders: this is a very powerful technique that can be implemented with neural networks. Check the example for MNIST with a NN and a CNN at [Autoencoder In PyTorch - Theory & Implementation](https://www.youtube.com/watch?v=zp8clK9yCro). That concept supports most generative AI: check the overview video on [MIT 6.S191: Deep Generative Modeling](https://www.youtube.com/watch?v=R8V8CbuxryI&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI&index=4).
 
 </details>
 
