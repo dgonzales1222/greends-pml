@@ -124,7 +124,7 @@ The goal of the following classes is to understand how ML models can be trained 
         # 5. Visualization
         # Calculate linear combination (z = Xw + b) and probabilities
         z = X_test_scaled @ model.weights + model.bias
-        probs = model.predict_proba(X_test_scaled)
+        probs = model.predict_proba(X_test_scaled) 
     
         plt.figure(figsize=(10, 6))
         plt.scatter(z[y_test == 1], probs[y_test == 1], color='red', label='Malignant', alpha=0.5)
@@ -313,7 +313,8 @@ The goal of the following classes is to understand how ML models can be trained 
 - Check introductory video [What are CNNs?, by IBM (6'20)](https://www.youtube.com/watch?v=QzY57FaENXg)
 - Example: very compact notebook for [Grape disease identification](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T10_CNN_Grape_Disease_Identification_Yolo8n.ipynb). The goal is to train a convolutional neural network (CNN) to identify if the plant is healthy or has  Black Rot, ESCA, Leaf Blight, using data from the [Grapevine Disease Dataset](https://www.kaggle.com/datasets/rm1000/grape-disease-dataset-original) and a pre-trained YOLO model. We see how to fine-tune the model from data already saved on Google Drive and interpret the model and the results.
 - Notebook on [Convolutional NNs for image classification](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T10_CNNs_for_image_classification.ipynb). This notenook focus on some of the main parameters for CNNs: convolutions and kernels, padding, pooling, stride, activation map, receptive field, batch normalization and dropout.
-- CNNs for image identification, image detection (e.g. YOLO, R-CNNs) and image segmentation (e.g. U-nets): encoders and decoders. In Google Colab or another IDE with an AI bot, prompt "Create a PyTorch script from that shows how to fine tune a custom U-net for image segmentation" and analyze the proposed notebook. 
+- CNNs for image identification, image detection (e.g. YOLO, R-CNNs) and image segmentation (e.g. U-nets): encoders and decoders. Check video [MIT 6.S191: Convolutional Neural Networks](https://www.youtube.com/watch?v=pqIcoskUuWs&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI).
+- In Google Colab or another IDE with an AI bot, prompt "Create a PyTorch script from that shows how to fine tune a custom U-net for image segmentation" and analyze the proposed notebook.
 - Autoencoders: this is a very powerful technique that can be implemented with neural networks. Check the example for MNIST with a NN and a CNN at [Autoencoder In PyTorch - Theory & Implementation](https://www.youtube.com/watch?v=zp8clK9yCro)
 
 </details>
