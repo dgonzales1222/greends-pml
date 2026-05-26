@@ -325,10 +325,21 @@ The goal of the following classes is to understand how ML models can be trained 
 <details markdown="block">
 <summary> 11. Model deployment  (May 29, 2026):  saving and loading ML model, Gradio, Hugging Face places</summary>
 
-- Saving and loading a PyTorch model. The following notebooks contain full pipelines to train a classifier for the MNIST dataset, including training (with `cuda` if available) and validation. The novelty is that we save the trained model after each epoch so it can be loaded later (for validation). This illustrates how a trained ML model can be saved to a file and loaded from a file, which is needed for deployment, fine-tuning and transfer learning.
-  - <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9b_MNIST_CNNs_pipeline_save_load_model.ipynb> : save the full model, which only works if the model is saved and loaded in the same device, which can be adequate for development in a local machine but is not recommended in general;
-  - <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9c_MNIST_CNNs_pipeline_save_load_state_dict.ipynb> : save only the model's learned parameters; it is the recommended way to save PyTorch models; to load, one first need to instantiate the model architecture and then load the weights.
-  - <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9d_MNIST_CNNs_pipeline_save_load_jit_format.ipynb> : JIT compilation provides a way to package your PyTorch model into a self-contained, optimized, and platform-independent format
+In this introductory class, we focus on the recommended PyTorch way to *save and load models*: saving the model’s state_dict. The state_dict contains the learned parameters of the model, such as weights and biases. To load these parameters later, we first recreate the same model architecture and then load the saved weights. We also introduce *training checkpoints*. A checkpoint is a dictionary that stores not only the model weights, but also other information needed to resume training, such as the optimizer state, the epoch number, and the loss. This allows us to stop training and continue later
+
+Practical questions:
+- What do we want to save?  For prediction later: save the model weights; for continuing training later: save a checkpoint.
+- How do we save a trained model for prediction? Typically, with `torch.save(model.state_dict(), "model_weights.pth")`
+- How do we save training progress? Typically, with
+  ```torch.save({
+      "epoch": epoch,
+      "model_state_dict": model.state_dict(),
+      "optimizer_state_dict": optimizer.state_dict(),
+      "loss": loss,
+  }, "checkpoint.pth")
+  ```
+
+
 - Deploying models with HF spaces.
     - Clone repository <https://huggingface.co/spaces/mcampagnolo/test2024> to your local machine and run the app locally. Try making some changes (for instance, the messages to the user) on `app.py` and launch the app on your local machine to observe the changes. Note that the app uses a fine-tuned version of an adapted version (output size reduced from 1000 to 4) of a pre-trained `resnet18` model.
     - (optional) Choose a simple image classification app on Hugging Face spaces (e.g. <https://huggingface.co/spaces/ByTixty1/Date_fruit-image-Classification/blob/main/app.py>) and test it. Check the files `app.py`, `requirements.py`, `model.pth`. Try to understand the contents of `app.py` which runs Gradio and defines the interface.
