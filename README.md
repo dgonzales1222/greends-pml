@@ -20,7 +20,7 @@ Some recommended tutorials:
 <!---
 [Overview notebook](https://github.com/isa-ulisboa/greends-pml/blob/main/ML_overview_with_examples.ipynb) This notebook provides an overview of the full course and contains pointers for other sources of relevant information and Python scripts.
 --->
-
+ 
 # Sessions
 Each description below includes the summary of the topics covered in the session, as well as the description of assignments and links to videos or other materials that students should work through.
 
@@ -325,59 +325,11 @@ The goal of the following classes is to understand how ML models can be trained 
 <details markdown="block">
 <summary> 11. Model deployment  (May 29, 2026):  saving and loading ML model, Gradio, Hugging Face places</summary>
 
-In this introductory class, we focus on the recommended PyTorch way to *save and load models*: saving the model’s state_dict. The state_dict contains the learned parameters of the model, such as weights and biases. To load these parameters later, we first recreate the same model architecture and then load the saved weights. We also introduce *training checkpoints*. A checkpoint is a dictionary that stores not only the model weights, but also other information needed to resume training, such as the optimizer state, the epoch number, and the loss. This allows us to stop training and continue later
-
-Practical questions:
-- What do we want to save?  For prediction later: save the model weights; for continuing training later: save a checkpoint.
-- How do we save a trained model for prediction? Typically, with
-  ```
-  torch.save(model.state_dict(), "model_weights.pth")
-  ```
-- How do we save training progress? Typically, with
-  ```
-  torch.save({
-      "epoch": epoch,
-      "model_state_dict": model.state_dict(),
-      "optimizer_state_dict": optimizer.state_dict(),
-      "loss": loss,
-  }, "checkpoint.pth")
-  ```
-
-
+- Notebook that illustrates how to create a simple deep learning model, train it and save the trained weights and, then, re-create the model, load the weights and use it for prediction: <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T11_save_load_apply_model.ipynb>.
 - Deploying models with HF spaces.
-    - Clone repository <https://huggingface.co/spaces/mcampagnolo/test2024> to your local machine and run the app locally. Try making some changes (for instance, the messages to the user) on `app.py` and launch the app on your local machine to observe the changes. Note that the app uses a fine-tuned version of an adapted version (output size reduced from 1000 to 4) of a pre-trained `resnet18` model.
-    - (optional) Choose a simple image classification app on Hugging Face spaces (e.g. <https://huggingface.co/spaces/ByTixty1/Date_fruit-image-Classification/blob/main/app.py>) and test it. Check the files `app.py`, `requirements.py`, `model.pth`. Try to understand the contents of `app.py` which runs Gradio and defines the interface.
-- Improve the Gradio interface for the app you cloned
-- Create your app in Hugging Face places: ideally you should build and test the app locally, and then push it to your HF space (she video below).
-- Suggestions of videos:
-  - [How to deploy a gradio app on huggingface (43')](https://www.youtube.com/watch?v=bN9WTxzLBRE&t=1845s)
-  - [How to Create a Hugging Face Space: A Beginner's Guide (16')](https://www.youtube.com/watch?v=xqdTFyRdtjQ). Very clear video with a list of steps for creating HF space, creating basic files, testing on the local machine and pushing the Gradio interface into HF spaces. However, there are no details about the `app.py` code itself nor about the model that is deployed.
-- Assignment #4: deploy a ML model on HF spaces (see Moodle)
-  
-</details>
-
-<!---
-
-- See [Notebook on introduction convolutional neural networks](https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9_CNNs_for_image_classification.ipynb). 
-- Application of CNNs to the MNIST problem.
-- Some techniques to improve deep learning: regularization, dropout, self-regularized activation functions, momentum, adaptive optimization. See https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T8_techniques_to_improve_DP.ipynb
-- Suggestions of videos:
-  - [MIT 6.S191: Convolutional Neural Networks 2025 (1:01)](https://www.youtube.com/watch?v=oGpzWAlP5p0)
-  
-</details>
-
-<details markdown="block">
-<summary> 11. Model deployment  (May 29, 2025):  saving and loading ML model, Gradio, Hugging Face places</summary>
-
-- Saving and loading a PyTorch model. The following notebooks contain full pipelines to train a classifier for the MNIST dataset, including training (with `cuda` if available) and validation. The novelty is that we save the trained model after each epoch so it can be loaded later (for validation). This illustrates how a trained ML model can be saved to a file and loaded from a file, which is needed for deployment, fine-tuning and transfer learning.
-  - https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9b_MNIST_CNNs_pipeline_save_load_model.ipynb : save the full model, which only works if the model is saved and loaded in the same device, which can be adequate for development in a local machine but is not recommended in general;
-  - https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9c_MNIST_CNNs_pipeline_save_load_state_dict.ipynb : save only the model's learned parameters; it is the recommended way to save PyTorch models; to load, one first need to instantiate the model architecture and then load the weights.
-  - https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9d_MNIST_CNNs_pipeline_save_load_jit_format.ipynb : JIT compilation provides a way to package your PyTorch model into a self-contained, optimized, and platform-independent format
-- Deploying models with HF spaces.
-    - Clone repository https://huggingface.co/spaces/mcampagnolo/test2024 to your local machine and run the app locally. Try making some changes (for instance, the messages to the user) on `app.py` and launch the app on your local machine to observe the changes. Note that the app uses a fine-tuned version of an adapted version (output size reduced from 1000 to 4) of a pre-trained `resnet18` model.
-    - (optional) Choose a simple image classification app on Hugging Face spaces (e.g. https://huggingface.co/spaces/ByTixty1/Date_fruit-image-Classification/blob/main/app.py) and test it. Check the files `app.py`, `requirements.py`, `model.pth`. Try to understand the contents of `app.py` which runs Gradio and defines the interface.
-- Improve the Gradio interface for the app you cloned
-- Create your app in Hugging Face places: ideally you should build and test the app locally, and then push it to your HF space (she video below).
+    - Check the app on Hugging Face spaces  <https://huggingface.co/spaces/ByTixty1/Date_fruit-image-Classification/blob/main/app.py> to apply the prediction model for Grapevine Disease Dataset we discussed last class and test it. Check the files `app.py`, `requirements.py`, and `model.pth`: what is they for? Try to understand the contents of `app.py` which runs Gradio and defines the interface.
+- Improve the Gradio interface for the app.
+- Assignment #4: create your own app in Hugging Face places
 - Suggestions of videos:
   - [How to deploy a gradio app on huggingface (43')](https://www.youtube.com/watch?v=bN9WTxzLBRE&t=1845s)
   - [How to Create a Hugging Face Space: A Beginner's Guide (16')](https://www.youtube.com/watch?v=xqdTFyRdtjQ). Very clear video with a list of steps for creating HF space, creating basic files, testing on the local machine and pushing the Gradio interface into HF spaces. However, there are no details about the `app.py` code itself nor about the model that is deployed.
@@ -386,7 +338,7 @@ Practical questions:
 </details>
 
 <details markdown="block">
-<summary> Foundation models and transfer learning  (June 6, 2025): types of ML problems and approaches, pre-trained models, fine-tuning</summary>
+<summary> Foundation models and transfer learning  (June 5, 2026): types of ML problems and approaches, pre-trained models, fine-tuning</summary>
 
 - Check introductory video [Machine Learning vs. Deep Learning vs. Foundation Models, by IBM (7'27)](https://www.youtube.com/watch?v=Beh13Cd_QbY).
 - See (Raschka et al, 2022), search *fine-tuning* in Chapters 6, 11 and 16. Chapter 16 is the one where the concepts for this class are discussed in more detail. However, Chapter 16 deal with large language models (LLM) and the transformer architecture, which are not discussed in class. Nevertheless, the idea or using a pre-trained model (possibly a foundation model) and fine-tuning it is valid for any kind of model.
@@ -395,34 +347,4 @@ Practical questions:
 - Try using a foundation Yolo model and high-level package from [Ultralytics](https://docs.ultralytics.com/models/). The [Yolov8](https://user-images.githubusercontent.com/27466624/212229562-003b8139-c8b5-4b0c-9d48-fe2f7b63243f.jpg) model is one of the available models for image tasks and be applied to different image sizes. Example of a notebook to fine-tune a `Yolov8n` model for grape leaf desease classification: https://colab.research.google.com/drive/1-kxX1kj6JzmFfyaXY4mMfq9EqWi34tww?usp=sharing (to fine-tune and predict, one needs to have data organized in folders in Google drive).
   
 </details>
-
-
---- 
-
-# Other resources
-
-<details markdown="block">
-<summary> Basic resources </summary>
-  
-- Sebastian Raschka, Yuxi (Hayden) Liu, and Vahid Mirjalili. Machine Learning with PyTorch and Scikit-Learn. Packt Publishing, 2022. See the presentation [webpage](https://sebastianraschka.com/blog/2022/ml-pytorch-book.html) and [GitHub repository](https://github.com/rasbt/machine-learning-book)
-- [https://pytorch.org/tutorials/](https://pytorch.org/tutorials/)
-
-</details>
-
-<details markdown="block">
-<summary> Tutorials </summary>
-  
-- [Machine Learning for Beginners (Microsoft)](https://microsoft.github.io/ML-For-Beginners/); [youtube channel](https://www.youtube.com/playlist?list=PLlrxD0HtieHjNnGcZ1TWzPjKYWgfXSiWG)
-- [AI for Beginners (Microsoft)](https://microsoft.github.io/AI-For-Beginners/)
-- [NYU course: Data Science for Everyone](https://www.youtube.com/@jonesrooy)
-- [MIT 6.S191: Introduction to Deep Learning (2024)](https://www.youtube.com/watch?v=ErnWZxJovaM)
-- [PyTorch tutorial by Patrick Loeber](https://www.youtube.com/playlist?list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4). [Github repo](https://github.com/patrickloeber/pytorchTutorial)
-- [Stanford Lecture Collection  Convolutional Neural Networks for Visual Recognition (2017)](https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv) and [Notes for the Stanford course on Convolutional Neural Networks for Visual Recognition](https://cs231n.github.io/)
-- [Stanford Machine Learning Full Course led by Andrew Ng (2020)](https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU). Led by Andrew Ng, this course provides a broad introduction to machine learning and statistical pattern recognition. Topics include: supervised learning (generative/discriminative learning, parametric/non-parametric learning, neural networks, support vector machines); unsupervised learning (clustering, dimensionality reduction, kernel methods); learning theory (bias/variance tradeoffs, practical advice); reinforcement learning and adaptive control.
-- [Broderick: Machine Learning, MIT 6.036 Fall 2020](https://www.youtube.com/watch?v=ZOiBe-nrmc4); [Full lecture information and slides](http://tamarabroderick.com/ml.html)
-  
-</details>
- 
-
-
 
