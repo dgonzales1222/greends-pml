@@ -242,7 +242,8 @@ The goal of the following classes is to understand how ML models can be trained 
 - Random Forests
 - Gradient boosting and XGBoost
 - Exercise: adapt the classification pipeline to apply the XGBoost classifier (Montesinho burned area data set)
-- Variable importance: MDI (Gini importance) and  MDA (permutation importance) for Random Forest; SHAP for generic ML models.
+- Variable importance: MDI (Gini importance) and  MDA (permutation importance) for Random Forest; SHAP for generic ML models. Check video [Explainable AI explained! | #4 SHAP](https://www.youtube.com/watch?v=9haIOplEIGM) for a short and clear explanation on how SHAP works. The SHAP package provides many useful visualizations tools.
+  
 <!--- - Pipeline that includes feature selection, followed by hyperparameter search: https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/wine_region_pipeline_XGB_CV_gridsearch_featselection.ipynb --->
 
 </details>
@@ -324,6 +325,15 @@ The goal of the following classes is to understand how ML models can be trained 
 <details markdown="block">
 <summary> 11. Model deployment  (May 29, 2026):  saving and loading ML model, Gradio, Hugging Face places</summary>
 
+- Saving and loading a PyTorch model. The following notebooks contain full pipelines to train a classifier for the MNIST dataset, including training (with `cuda` if available) and validation. The novelty is that we save the trained model after each epoch so it can be loaded later (for validation). This illustrates how a trained ML model can be saved to a file and loaded from a file, which is needed for deployment, fine-tuning and transfer learning.
+  - <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9b_MNIST_CNNs_pipeline_save_load_model.ipynb> : save the full model, which only works if the model is saved and loaded in the same device, which can be adequate for development in a local machine but is not recommended in general;
+  - <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9c_MNIST_CNNs_pipeline_save_load_state_dict.ipynb> : save only the model's learned parameters; it is the recommended way to save PyTorch models; to load, one first need to instantiate the model architecture and then load the weights.
+  - <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T9d_MNIST_CNNs_pipeline_save_load_jit_format.ipynb> : JIT compilation provides a way to package your PyTorch model into a self-contained, optimized, and platform-independent format
+- Deploying models with HF spaces.
+    - Clone repository <https://huggingface.co/spaces/mcampagnolo/test2024> to your local machine and run the app locally. Try making some changes (for instance, the messages to the user) on `app.py` and launch the app on your local machine to observe the changes. Note that the app uses a fine-tuned version of an adapted version (output size reduced from 1000 to 4) of a pre-trained `resnet18` model.
+    - (optional) Choose a simple image classification app on Hugging Face spaces (e.g. <https://huggingface.co/spaces/ByTixty1/Date_fruit-image-Classification/blob/main/app.py>) and test it. Check the files `app.py`, `requirements.py`, `model.pth`. Try to understand the contents of `app.py` which runs Gradio and defines the interface.
+- Improve the Gradio interface for the app you cloned
+- Create your app in Hugging Face places: ideally you should build and test the app locally, and then push it to your HF space (she video below).
 - Suggestions of videos:
   - [How to deploy a gradio app on huggingface (43')](https://www.youtube.com/watch?v=bN9WTxzLBRE&t=1845s)
   - [How to Create a Hugging Face Space: A Beginner's Guide (16')](https://www.youtube.com/watch?v=xqdTFyRdtjQ). Very clear video with a list of steps for creating HF space, creating basic files, testing on the local machine and pushing the Gradio interface into HF spaces. However, there are no details about the `app.py` code itself nor about the model that is deployed.
