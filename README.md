@@ -331,11 +331,12 @@ The goal of the following classes is to understand how ML models can be trained 
 
  - Typical pipeline for creating and deploying a model:
    - Create model, train it with reference data and save weights with `torch.save(model.state_dict(), "model_weights.pth")`. This could be done, e.g. in Colab or in your own PC.
-   - Re-create the model, load the weights, and predict over new examples. This could be done e.g. on a platform like Ugging Face spaces (see below)
+   - Re-create the model, load the weights, and predict over new examples. This could be done e.g. on a platform like Hugging Face spaces (see below)
+   - The only data you need to load to deploy the model is the `model_weights.pth` file.
 
 - Notebook that illustrates how to create a simple deep learning model, train it and save the trained weights and, then, re-create the model, load the weights and use it for prediction: <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T11_save_load_apply_model.ipynb>.
 - Deploying models with HF spaces.
-    - Check the app on Hugging Face spaces  <https://huggingface.co/spaces/ByTixty1/Date_fruit-image-Classification/blob/main/app.py> to apply the prediction model for Grapevine Disease Dataset we discussed last class and test it. Check the files `app.py`, `requirements.py`, and `model.pth`: what is they for? Try to understand the contents of `app.py` which runs Gradio and defines the interface.
+    - Check the app on Hugging Face spaces  <https://huggingface.co/spaces/mcampagnolo/test2024/blob/main/app.py> to apply the prediction model for Grapevine Disease Dataset we discussed last class and test it. Check the files `app.py`, `requirements.py`, and `model.pth`: what is they for? Try to understand the contents of `app.py` which runs Gradio and defines the interface.
 - Improve the Gradio interface for the app.
 - Assignment #4: create your own app in Hugging Face places
 - Suggestions of videos:
