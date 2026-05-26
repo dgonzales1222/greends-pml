@@ -329,9 +329,13 @@ In this introductory class, we focus on the recommended PyTorch way to *save and
 
 Practical questions:
 - What do we want to save?  For prediction later: save the model weights; for continuing training later: save a checkpoint.
-- How do we save a trained model for prediction? Typically, with `torch.save(model.state_dict(), "model_weights.pth")`
+- How do we save a trained model for prediction? Typically, with
+  ```
+  torch.save(model.state_dict(), "model_weights.pth")
+  ```
 - How do we save training progress? Typically, with
-  ```torch.save({
+  ```
+  torch.save({
       "epoch": epoch,
       "model_state_dict": model.state_dict(),
       "optimizer_state_dict": optimizer.state_dict(),
