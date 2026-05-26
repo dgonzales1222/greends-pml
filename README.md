@@ -325,6 +325,14 @@ The goal of the following classes is to understand how ML models can be trained 
 <details markdown="block">
 <summary> 11. Model deployment  (May 29, 2026):  saving and loading ML model, Gradio, Hugging Face places</summary>
 
+- A PyTorch learning model has two parts:
+  - The *model architecture* that includes layers, activation functions, forward pass. This is stored as **Python code**;
+  - The learned weights, which are numbers. This is stored in a `.pth` file.
+
+ - Typical pipeline for creating and deploying a model:
+   - Create model, train it with reference data and save weights with `torch.save(model.state_dict(), "model_weights.pth")`. This could be done, e.g. in Colab or in your own PC.
+   - Re-create the model, load the weights, and predict over new examples. This could be done e.g. on a platform like Ugging Face spaces (see below)
+
 - Notebook that illustrates how to create a simple deep learning model, train it and save the trained weights and, then, re-create the model, load the weights and use it for prediction: <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T11_save_load_apply_model.ipynb>.
 - Deploying models with HF spaces.
     - Check the app on Hugging Face spaces  <https://huggingface.co/spaces/ByTixty1/Date_fruit-image-Classification/blob/main/app.py> to apply the prediction model for Grapevine Disease Dataset we discussed last class and test it. Check the files `app.py`, `requirements.py`, and `model.pth`: what is they for? Try to understand the contents of `app.py` which runs Gradio and defines the interface.
@@ -333,9 +341,10 @@ The goal of the following classes is to understand how ML models can be trained 
 - Suggestions of videos:
   - [How to deploy a gradio app on huggingface (43')](https://www.youtube.com/watch?v=bN9WTxzLBRE&t=1845s)
   - [How to Create a Hugging Face Space: A Beginner's Guide (16')](https://www.youtube.com/watch?v=xqdTFyRdtjQ). Very clear video with a list of steps for creating HF space, creating basic files, testing on the local machine and pushing the Gradio interface into HF spaces. However, there are no details about the `app.py` code itself nor about the model that is deployed.
-- Assignment #4: deploy a ML model on HF spaces (see Moodle)
   
 </details>
+
+--- 
 
 <details markdown="block">
 <summary> Foundation models and transfer learning  (June 5, 2026): types of ML problems and approaches, pre-trained models, fine-tuning</summary>
