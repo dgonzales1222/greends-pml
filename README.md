@@ -337,7 +337,7 @@ The goal of the following classes is to understand how ML models can be trained 
 - Notebook that illustrates how to create a simple deep learning model, train it and save the trained weights and, then, re-create the model, load the weights and use it for prediction: <https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T11_save_load_apply_model.ipynb>.
 - Deploying models with HF spaces.
     - Check the app on Hugging Face spaces  <https://huggingface.co/spaces/mcampagnolo/test2024/blob/main/app.py> to apply the prediction model for Grapevine Disease Dataset we discussed last class and test it. Check the files `app.py`, `requirements.py`, and `model.pth`: what is they for? Try to understand the contents of `app.py` which runs Gradio and defines the interface. 
-- You can download the app and inprove it, in particular you can improve the Gradio interface for the app.
+- You can download the app and improve it, in particular you can improve the Gradio interface for the app.
 - Assignment #4: create your own app in Hugging Face places
 - Suggestions of videos:
   - [How to deploy a gradio app on huggingface (43')](https://www.youtube.com/watch?v=bN9WTxzLBRE&t=1845s)
