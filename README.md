@@ -351,10 +351,10 @@ The goal of the following classes is to understand how ML models can be trained 
 <summary> 12. Foundation models and transfer learning  (June 5, 2026): types of ML problems and approaches, pre-trained models, fine-tuning</summary>
 
 - Check introductory video [Machine Learning vs. Deep Learning vs. Foundation Models, by IBM (7'27)](https://www.youtube.com/watch?v=Beh13Cd_QbY).
-- See (Raschka et al, 2022), search *fine-tuning* in Chapters 6, 11 and 16. Chapter 16 is the one where the concepts for this class are discussed in more detail. However, Chapter 16 deal with large language models (LLM) and the transformer architecture, which are not discussed in class. Nevertheless, the idea or using a pre-trained model (possibly a foundation model) and fine-tuning it is valid for any kind of model.
+- Check video on [Large Language Models explained briefly, by 3Blue1Brown](https://www.youtube.com/watch?v=LPZh9BOjkQs)
+- See (Raschka et al, 2022), search *fine-tuning* in Chapters 6, 11 and 16. Chapter 16 is the one where the concepts for this class are discussed in more detail. However, Chapter 16 deals with large language models (LLM) and the transformer architecture, which has not been discussed in detail in class. Nevertheless, the idea or using a pre-trained model (possibly a foundation model) and fine-tuning it is valid for any kind of model.
 - See notes about foundation models, fine-tuning and transfer learning: https://github.com/isa-ulisboa/greends-pml/blob/maindocs/T10_ML_fine_tuning_transfer_foundation_models.md
 - Notebook with the pipeline to load and adapt a pre-trained `resnet` model, freeze layers, and  fine-tune it:  https://github.com/isa-ulisboa/greends-pml/blob/main/notebooks/T10b_MNIST_resnet18_adapt_freeze_fine_tune.ipynb
-- Try using a foundation Yolo model and high-level package from [Ultralytics](https://docs.ultralytics.com/models/). The [Yolov8](https://user-images.githubusercontent.com/27466624/212229562-003b8139-c8b5-4b0c-9d48-fe2f7b63243f.jpg) model is one of the available models for image tasks and be applied to different image sizes. Example of a notebook to fine-tune a `Yolov8n` model for grape leaf desease classification: https://colab.research.google.com/drive/1-kxX1kj6JzmFfyaXY4mMfq9EqWi34tww?usp=sharing (to fine-tune and predict, one needs to have data organized in folders in Google drive).
-  
+
 </details>
 
